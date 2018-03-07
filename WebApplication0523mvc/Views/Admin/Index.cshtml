@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>管理员主页</h1>
+    <p class="lead">欢迎使用员工信息管理系统。您可以方便快捷地 管理员工信息，查看薪水发放记录，生成员工工作报表。</p>
+    <p><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-primary btn-lg">登出系统 &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>员工信息管理</h2>
+        <p>您可以对员工信息进行增删改查等操作</p>
+        <p>Including creating an employee, reading information, updating data, deleting an employee.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Employees")">前往 &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>薪水发放记录</h2>
+        <p>您可以查看员工的薪水发放记录</p>
+        <p>You can easily keep track of the records of the payrolls.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Payrolls")">前往 &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>管理员信息报表</h2>
+        <p>生成员工在指定时间内的累计工时报表以及累计薪水报表</p>
+        <p>Generating an administrative report about an employee's total hours worked or pay year-to-date.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","AdminReport")">前往 &raquo;</a></p>
+    </div>
+</div>

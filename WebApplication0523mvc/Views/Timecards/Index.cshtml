@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplication0523mvc.Models.Timecard>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>考勤卡管理</h1>
+<p>
+    本周结算起止日期：@Html.Display("WeekStart")
+    至
+    @Html.Display("WeekEnd")
+</p>
+<p>
+    剩余可记录的时间：@Html.Display("HourLeft")
+    小时
+</p>
+<p>
+    <input type="button" value="添加新记录" onclick="location.href='@Url.Action("Create", "Timecards")'" class="btn btn-primary btn-lg" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chargenumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isSubmitted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chargenumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isSubmitted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
+            <input type="button" value="提交" onclick="location.href='@Url.Action("Submit", new { id=item.ID })'" class="btn btn-default" />
+        </td>
+    </tr>
+}
+</table>
+
+<div>
+    <input type="button" value="返回" onclick="location.href='@Url.Action("Index", "EmployeeMainPage")'" class="btn btn-default" />
+</div>

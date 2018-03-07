@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>员工信息管理系统</h1>
+    <p class="lead">欢迎使用员工信息管理系统。</p>
+    <p>管理员可进行员工信息管理，查看薪水发放记录，生成员工工作报表。</p>
+    <p>员工可更改薪水发放方式，录入考勤卡和销售清单，生成工作信息报表。</p>
+    <br />
+    <p><input type="button" value="马上登录" onclick="location.href='@Url.Action("Login","Account")'" class="btn btn-primary btn-lg" /></p>
+</div>
+

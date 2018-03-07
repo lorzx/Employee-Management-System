@@ -1,0 +1,54 @@
+﻿@model WebApplication0523mvc.Models.EmployeeReport
+
+@{
+    ViewBag.Title = "Vacation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>剩余年假报告</h1>
+
+<p>
+    <!--Html.ActionLink("Create New", "Create")-->
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vacation)
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Vacation)
+        </td>
+
+    </tr>
+
+</table>
+
+<div style="text-align:center">
+    <a class="btn btn-primary btn-lg" href="@Url.Action("generateReport","EmployeeReport")">下载报告</a>
+</div>
+
+<input type="button" value="返回" onclick="location.href='@Url.Action("Index")'" class="btn btn-default" />

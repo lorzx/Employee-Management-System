@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>薪水发放方式</h1>
+
+<h4>当前所选方式：@Html.Display("PaymentMethod")</h4>
+<input type="button" value="直接领取" onclick="location.href='@Url.Action("PickUp")'" class="btn btn-primary btn-lg" />
+<input type="button" value="邮寄方式" onclick="location.href='@Url.Action("Mail")'" class="btn btn-primary btn-lg" />
+<input type="button" value="转账方式" onclick="location.href='@Url.Action("Bank")'" class="btn btn-primary btn-lg" />
+
+<p><br />
+    <input type="button" value="返回" onclick="location.href='@Url.Action("Index", "EmployeeMainPage")'" class="btn btn-default" />
+</p>
+
+@*
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lrtk.css" media="all">
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <!-- 代码 开始 -->
+    <!-- STAR_CONTAINER -->
+    <div id="container">
+        <div id="wrap-container" class="clearfix">
+            <div class="examples_body">
+
+                <ul class="bannerHolder">
+                    <li>
+                        <div class="banner">
+                            <a href="@Url.Action("PickUp")" target="_blank">
+                                <img height="125" width="125" alt="The Best Designs" src="~/Images/pickup.jpg" />
+                            </a>
+                            <p class="companyInfo">直接领取</p>
+                            <div class="cornerTL"></div>
+                            <div class="cornerTR"></div>
+                            <div class="cornerBL"></div>
+                            <div class="cornerBR"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner">
+                            <a href="@Url.Action("Mail")" target="_blank">
+                                <img height="125" width="125" alt="Mail Chimp" src="~/Images/mail.jpeg" />
+                            </a>
+                            <p class="companyInfo">邮寄方式</p>
+                            <div class="cornerTL"></div>
+                            <div class="cornerTR"></div>
+                            <div class="cornerBL"></div>
+                            <div class="cornerBR"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner">
+                            <a href="@Url.Action("Bank")" target="_blank">
+                                <img height="125" width="125" alt="Mail Chimp" src="~/Images/transfer.jpg" />
+                            </a>
+                            <p class="companyInfo">转账方式</p>
+                            <div class="cornerTL"></div>
+                            <div class="cornerTR"></div>
+                            <div class="cornerBL"></div>
+                            <div class="cornerBR"></div>
+                        </div>
+                    </li>
+                    
+                </ul>
+                <!-- Examples body -->
+            </div>
+        </div>
+        <!-- /COPYRIGHT -->
+    </div>
+    <!-- END_CONTAINER -->
+    <script>
+$(document).ready(function(){
+
+	// 0.4代表遮罩的透明度
+	$('.banner div').css('opacity',0.2);
+
+	$('.banner').hover(function(){
+
+		var el = $(this);
+
+		// 先淡出阴影，后淡入文字
+		el.find('div').stop().animate({width:200,height:200},'slow',function(){
+
+			el.find('p').fadeIn('fast');
+		});
+
+	},function(){
+
+		var el = $(this);
+
+		// 隐藏文字
+		el.find('p').stop(true,true).hide();
+
+		// 去掉遮罩
+		el.find('div').stop().animate({width:60,height:60},'fast');
+
+	}).click(function(){
+
+		// 点击图片时打开链接
+
+		window.open($(this).find('a').attr('href'));
+
+	});
+});
+    </script>
+    
+</body>
+</html>
+*@

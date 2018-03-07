@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>员工主页</h1>
+    <p class="lead">欢迎使用员工信息管理系统。您可以方便快捷地 更改薪水发放方式，登记考勤记录，生成自己的工作报表。</p>
+    <p><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default">登出系统 &raquo;</a></p>
+    <h6>最近一次发薪日期：@Html.Display("LastPayDate")</h6>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>薪水发放方式</h2>
+        <p>您可以更改薪水发放的方式</p>
+        <p>You can change the payment method. The 3 options are PICKUP, MAIL and TRANSFER.</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index","ChangePayment")">前往 &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>考勤记录管理</h2>
+        <p>登记考勤卡记录，以便系统进行清算</p>
+        <p>Upload and submit your timecards as the basis of your payment.</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index","Timecards")">前往 &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>员工工作报告</h2>
+        <p>生成指定时间内的累计工时,累计薪水等报表</p>
+        <p>Generating an employee report about your total hours worked, pay year-to-date, etc.</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index","EmployeeReport")">前往 &raquo;</a></p>
+    </div>
+</div>

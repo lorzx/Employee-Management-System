@@ -1,0 +1,55 @@
+﻿@model WebApplication0523mvc.Models.AdminReport
+
+
+@{
+    ViewBag.Title = "HourReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>员工累计工时报告</h1>
+
+<p>
+    <!--Html.ActionLink("Create New", "Create")-->
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalHour)
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TotalHour)
+        </td>
+
+    </tr>
+
+</table>
+
+<div style="text-align:center">
+    <a class="btn btn-primary btn-lg" href="@Url.Action("generateReport","AdminReport")">下载报告</a>
+</div>
+
+<input type="button" value="返回" onclick="location.href='@Url.Action("Index")'" class="btn btn-default" />
